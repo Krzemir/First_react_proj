@@ -1,0 +1,14 @@
+.columnForm {
+  padding: 10px;
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  & > * {
+    text-align: center;
+    margin-left: 10px;
+  }
+
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
+}
