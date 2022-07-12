@@ -5,7 +5,11 @@ import { useSelector } from 'react-redux';
 
 
 const Column = (props) => {
-  const cards = useSelector(state => state.cards.filter(card => card.columnId === props.id));
+
+  const searchValue = useSelector(state => state.search);
+
+  const cards = useSelector(state => state.cards.filter(card => card.columnId === props.id && card.title.toLowerCase().includes(searchValue.toLowerCase())));
+
 
   return (
     <article className={styles.column}>
