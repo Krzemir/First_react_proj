@@ -1,6 +1,7 @@
 import shortid from "shortid";
 
 //selectors
+export const getAllColumns = state => state.columns;
 export const getColumnsByList = ({columns}, listId) => columns.filter(column => column.listId === listId);
 
 //actions

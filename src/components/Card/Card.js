@@ -2,9 +2,7 @@ import styles from './Card.module.scss';
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { toggleFavorite } from '../../redux/cardRedux';
-// import { useSelector } from 'react-redux';
-// import { getFavoriteCards } from '../../redux/store';
+import { toggleFavorite, deleteCard } from '../../redux/cardRedux';
 
 const Card = (props) => {
 
@@ -20,7 +18,13 @@ const Card = (props) => {
    dispatch(toggleFavorite(cardId));
   };
 
-  return <li className={styles.card}>{props.title}<span className={clsx('fa fa-star-o', isFavorite && styles.active)} onClick={changeFavorite}/></li>;
+  const deleteOneCard = (e) => {
+    e.preventDefault();
+    dispatch(deleteCard(cardId));
+    console.log(cardId)
+  };
+
+  return <li className={styles.card}><div>{props.title}</div><div><span className={clsx('fa fa-star-o', isFavorite && styles.active)} onClick={changeFavorite}/><span className='fa fa-trash' onClick={deleteOneCard}/></div></li>;
 };
 
 export default Card;
