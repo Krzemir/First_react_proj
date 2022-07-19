@@ -2,7 +2,7 @@ import styles from './Card.module.scss';
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { toggleFavorite } from '../../redux/store';
+import { toggleFavorite } from '../../redux/cardRedux';
 // import { useSelector } from 'react-redux';
 // import { getFavoriteCards } from '../../redux/store';
 
